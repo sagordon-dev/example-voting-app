@@ -10,7 +10,7 @@ COPY package*.json ./
 
 # Install nodemon globally, set npm registry, install dependencies and clean cache
 RUN npm install -g nodemon && \
-    npm config set registry https://registry.npm.taobao.org && \
+    npm config set registry https://registry.npmjs.org/ && \
     npm install && \
     npm cache clean --force
 

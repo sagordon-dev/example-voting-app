@@ -11,7 +11,7 @@ COPY . /app
 RUN mvn package -D skipTests
 
 # Use a specific version of the openjdk image for the runtime stage
-FROM openjdk:11-jre-alpine3.9
+FROM ibmjava:8-jre 
 
 # Copy the jar file from the build stage to the runtime stage
 COPY --from=maven_build /app/target/worker-jar-with-dependencies.jar /worker-jar-with-dependencies.jar
