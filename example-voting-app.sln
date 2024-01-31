@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "worker", "worker", "{9CE0BF8B-7A50-4CB0-B15E-04B94FC8CA88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B57D94CD-0DBB-41A9-8EF0-92C5AB373C57}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Worker", "worker\src\Worker\Worker.csproj", "{29CDB1D1-01C6-477B-A6E0-8FA0CCE06B29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29CDB1D1-01C6-477B-A6E0-8FA0CCE06B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29CDB1D1-01C6-477B-A6E0-8FA0CCE06B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29CDB1D1-01C6-477B-A6E0-8FA0CCE06B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29CDB1D1-01C6-477B-A6E0-8FA0CCE06B29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B57D94CD-0DBB-41A9-8EF0-92C5AB373C57} = {9CE0BF8B-7A50-4CB0-B15E-04B94FC8CA88}
+		{29CDB1D1-01C6-477B-A6E0-8FA0CCE06B29} = {B57D94CD-0DBB-41A9-8EF0-92C5AB373C57}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A19318B9-9DE7-498D-8085-3A6EF21DE1F9}
+	EndGlobalSection
+EndGlobal
