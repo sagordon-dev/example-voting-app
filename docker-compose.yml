@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  python-vote-app:
+    build:
+      context: ./vote
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - redis
+    environment:
+      - SOME_ENV_VAR=value
+    networks:
+      - app-network
+
+  redis:
+    image: "redis:6.0-alpine"
+    networks:
+      - app-network
+
+  java-worker:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - redis
+    environment:
+      - SOME_ENV_VAR=value
+    networks:
+      - app-network
+
+  db:
+    image: "postgres:12-alpine"
+    networks:
+      - app-network
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  nodejs-result-app:
+    build:
+      context: ./result
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - SOME_ENV_VAR=value
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
