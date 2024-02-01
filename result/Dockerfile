@@ -17,6 +17,9 @@ RUN npm install -g nodemon && \
 # Copy the rest of the application code to the work directory
 COPY . /app
 
+# Set the environment variable to tell the application to listen on port 80
+ENV PORT=80
+
 # Expose port 80 for the application
 EXPOSE 80
 
