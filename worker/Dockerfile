@@ -4,8 +4,14 @@ FROM maven:3.6.3-jdk-11 AS maven_build
 # Set the working directory in the build stage
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy the pom.xml file into the container at /app
+COPY pom.xml /app
+
+# Download the project dependencies
+RUN mvn dependency:go-offline -B
+
+# Copy the rest of the project files into the container at /app
+COPY src /app/src
 
 # Run the maven build, skipping tests for the build stage
 RUN mvn package -D skipTests
